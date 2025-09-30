@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/product.route');
 const app = express();
-const db_uri = 'mongodb+srv://mdbilalofficial_db_user:nodeapipassword@cluster0.merjpy6.mongodb.net/Node-API?retryWrites=true&w=majority&appName=Cluster0';
-const PORT = 3000;
+const db_uri = process.env.MONGODB_URI;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log('hello from console');
